@@ -1,0 +1,18 @@
+<br>
+<div class="p-5">
+    <a routerLink="nowy">Dodaj nowy artykul</a> 
+    <br>
+    <br>
+    <div *ngIf="artykuly" class="card-columns">
+        <div *ngFor="let item of artykuly; index as i; first as isFirst">
+            <app-artykul1 [artykul]="item"></app-artykul1>
+            <a [routerLink]="item.id">Edytuj</a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+    <label class="m-2">Strona:</label> <input type="number" [(ngModel)]="stronicowanie.strona">
+    <label class="m-2">Ilość:</label> <input type="number" [(ngModel)]="stronicowanie.ilosc">
+    <button (click)="odswiez()" class="btn btn-secondary mx-2">Przejdź</button>
+</div>

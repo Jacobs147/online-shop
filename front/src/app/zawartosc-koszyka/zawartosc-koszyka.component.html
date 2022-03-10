@@ -1,0 +1,17 @@
+<div *ngIf="wybraneArtykuly">
+    <br>
+    <br>
+    <strong class="m-2">Artykuły w koszyku:</strong>
+    <br>
+    <br>
+    <ol class="list-group list-group-numbered">
+        <li *ngFor="let item of wybraneArtykuly; index as i; first as isFirst"
+            class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="font-weight-bold"> {{item.nazwa}}</div>
+                {{item.opis}}
+            </div>
+            <span class="badge rounded-pill bg-secondary m-3" style="font-size: 1em; color: white;">{{item.cena}}zł</span>
+        </li><br>
+    </ol>
+</div>

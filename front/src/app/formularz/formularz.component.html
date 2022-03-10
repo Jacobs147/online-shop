@@ -1,0 +1,32 @@
+<div class="p-5 d-flex">
+    <form *ngIf="form != null" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row m-2">
+            <div class="col-md-3 text-right">
+                <label for="nazwa">Nazwa:</label>
+            </div>
+            <div class="col-md-9">
+                <input id="nazwa" name="nazwa" formControlName="nazwa">
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-md-3 text-right">
+                <label for="cena">Cena:</label>
+            </div>
+            <div class="col-md-9">
+                <input id="cena" name="nazwisko" formControlName="cena" required min="0" type="number">
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-md-3 text-right">
+                <label for="opis">Opis:</label>
+            </div>
+            <div class="col-md-9">
+                <input id="opis" name="opis" formControlName="opis" maxlength="1000">
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="reset" class="btn btn-secondary m-2">Reset</button>
+            <button [disabled]="form.invalid" class="btn btn-primary m-2 mr-4">Zapisz</button>
+        </div>
+    </form>
+</div>

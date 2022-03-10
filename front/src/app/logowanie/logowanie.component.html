@@ -1,0 +1,19 @@
+<div class="d-flex p-3 justify-content-center">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div>
+            <label>Login: </label>
+            <input [(ngModel)]="login.login" name="login" required class="m-2">
+        </div>
+        <div>
+            <label>Hasło: </label>
+            <input [(ngModel)]="login.password" name="password" required type="password" class="m-2">
+        </div>
+        <div class="d-flex justify-content-end">
+            <input type="submit" value="Zaloguj" [disabled]="form.invalid" class="btn btn-primary m-2">
+        </div>
+    </form>
+
+    <div>
+        {{blad}}
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" style="font-size: xx-large;">
+                <strong appZoltyTekst class="d-flex justify-content-center">Tworzenie interfejsów użytkownika</strong>
+            </a>
+            <app-koszyk *appAutoryzacja class="d-flex justify-content-right"></app-koszyk>
+        </div>
+        <div class="navbar-collapse">
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="containter p-2">
+        <div class="mx-3">
+            <button *ngIf="czyZalogowany()" (click)="wyloguj()" class="btn btn-link">Wyloguj</button><br>
+            <button *appAutoryzacja (click)="powrot()" class="btn btn-link">Powrót do strony głównej</button> <br>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</body>
